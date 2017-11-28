@@ -32,7 +32,7 @@ module.exports = function(app) {
   });
 
   /*
-      User bio page
+      User Bio page
       TODO - provide page for all user settings
 
    */
@@ -54,6 +54,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/events.html"));
   });
 
+  /*
+        Display the crime map page
 
+   */
+  app.get("/crime", function(req, res) {
+
+    //show all crime in area
+    res.sendFile(path.join(__dirname, "../public/crime.html"));
+  });
 
 };
