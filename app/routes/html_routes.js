@@ -2,6 +2,7 @@
 
 var path = require("path");
 
+// var db = require("../models/index.js");
 
 //routes to export
 module.exports = function(app) {
@@ -24,6 +25,13 @@ module.exports = function(app) {
     }
     // res.sendFile(path.join(__dirname, "../public/index.html"));
     res.render("index", hbObj);
+
+    //what this should look like in working version...
+    // dbModel.getAllUsers().then(function(results) {
+    //   res.render("index", results);
+    // });
+
+
   });
 
   /*

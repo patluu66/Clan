@@ -28,6 +28,7 @@ app.set('views', path.join(__dirname, "app/views/"));
 
 //push handlebars - use custom views location
  app.engine("handlebars", exphbs({ defaultLayout: "main", layoutsDir: "app/views/layouts/"}));
+ //set as view engine
 app.set("view engine", "handlebars");
 
 
