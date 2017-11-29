@@ -25,10 +25,23 @@ h1, h2, h3, h4, h5, h6 {
 	margin-right: 20px;
 }
 
+.nav.nav-pills.navbar-right li a {
+    color: #f4f4f4;
+}
+
+.active a {
+	background-color: #777777 !important;
+}
+
+.nav>li>a:focus, .nav>li>a:hover {
+  background-color: #D7D5D5;
+}
+
 .mainTitle {
 	font-size: 36px;
-	letter-spacing: 10px;
-	margin-top: 10px;
+	letter-spacing: 5px;
+	margin-top: 5px;
+	color: #f4f4f4;
 }
 
 .navbar-fixed-top {
