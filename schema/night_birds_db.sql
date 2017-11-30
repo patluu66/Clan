@@ -16,9 +16,31 @@ CREATE TABLE people
 	home_phone BIGINT,
   work_phone BIGINT,
   mobile_phone BIGINT,
-  email VARCHAR(255)
+  email VARCHAR(255) NOT NULL,
+	password VARCHAR(255) NOT NULL DEFAULT 'letmein',
+	security VARCHAR(225),
+	guardian BOOLEAN NOT NULL DEFAULT true,
+	safe_place BOOLEAN NOT NULL DEFAULT true
 
 );
+
+/*
+ 	Cable for cars
+ */
+CREATE TABLE cars
+(
+
+	id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY (id),
+  owner_id int NOT NULL, FOREIGN KEY (owner_id) REFERENCES people(id),
+  make VARCHAR(255) NOT NULL,
+	model VARCHAR(255) NOT NULL,
+	color VARCHAR(255) NOT NULL,
+	year int NOT NULL
+
+
+);
+
+
 
 /*  create a pets table */
 CREATE TABLE pets
