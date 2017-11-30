@@ -1,22 +1,20 @@
-// *********************************************************************************
-// CONNECTION.JS - THIS FILE INITIATES THE CONNECTION TO MYSQL
-// *********************************************************************************
 
 
-// Dependencies
-var Sequelize = require("sequelize");
-
-// Creates mySQL connection using Sequelize
-var sequelize = new Sequelize("pets2", "root", "", {
-  host: "localhost",
-  dialect: "mysql",
-  pool: {
-    max: 5,
-    min: 0,
-    idle: 10000
-  }
+var mysql = require('mysql');
+var connection = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: 'sql_stc_1357',
+    database: 'night_birds_db'
 });
 
-// Exports the connection for other files to use
-module.exports = sequelize;
 
+connection.connect(function(err) {
+    if (err) {
+        console.error('error connecting: ' + err.stack);
+        return;
+    }
+    console.log('connected as id ' + connection.threadId);
+});
+
+module.exports = connection;

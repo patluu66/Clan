@@ -2,7 +2,7 @@
 
 var path = require("path");
 
-// var db = require("../models/index.js");
+
 
 //routes to export
 module.exports = function(app) {
@@ -17,19 +17,19 @@ module.exports = function(app) {
    */
   app.get("/", function(req, res) {
 
-    //test handle bars with some random data....
-    var hbObj = {
-      posts : [ {id:1,title: "My First Post", body: "Hey this is my post"},
-                {id:2, title: "Another Post", body: "I've got something more to add"},
-                {id:2, title: "And finally...", body: "Last but not least, a random thought..."}]
-    }
-    // res.sendFile(path.join(__dirname, "../public/index.html"));
-    res.render("index", hbObj);
+    // //test handle bars with some random data....
+    // var hbObj = {
+    //   posts : [ {id:1,title: "My First Post", body: "Hey this is my post"},
+    //             {id:2, title: "Another Post", body: "I've got something more to add"},
+    //             {id:2, title: "And finally...", body: "Last but not least, a random thought..."}]
+    // }
+    // // res.sendFile(path.join(__dirname, "../public/index.html"));
+    // res.render("index", hbObj);
 
     //what this should look like in working version...
-    // dbModel.getAllUsers().then(function(results) {
-    //   res.render("index", results);
-    // });
+    threads.getAllUsers().then(function(results) {
+      res.render("index", results);
+    });
 
 
   });
