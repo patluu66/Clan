@@ -52,7 +52,7 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #ee7420;
 }
 .mainContent {
-	padding-top: 100px; 
+	padding-top: 100px;
 }
 
 .panelBodyReply {
@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 	display: inline;
 }
 
-/* profile page */
+/*profile page*/
 .userChanges {
 	display: inline;
 }
