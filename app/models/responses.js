@@ -5,14 +5,14 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
 //create the threads table
-var Threads = sequelize.define('thread', {
+var Responses = sequelize.define('response', {
 
 }, {
-  tablename: 'threads'
+  tablename: 'responses'
 });
 
 // Syncs with DB
-Threads.sync();
+Responses.sync();
 
 //export the thread model
-module.exports = Threads;
+module.exports = Responses;

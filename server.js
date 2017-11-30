@@ -42,9 +42,15 @@ app.set("view engine", "handlebars");
 app.use(express.static("app/public"));
 
 
-//setup the routes - html and api
-require("./app/routes/api_routes.js")(app);
-require("./app/routes/html_routes.js")(app);
+//setup the routes - controller
+require("./app/controllers/clan_controller.js");
+
+// bring in the routes
+var routes = require('./controllers/burgers_controller.js');
+
+// connect the routes
+app.use('/', routes);
+
 
 //run up the server
 app.listen(PORT, function() {
