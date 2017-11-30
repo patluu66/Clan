@@ -5,7 +5,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 //fav icon
-var favicon = require('serve-favicon');
+// var favicon = require('serve-favicon');
 
 
 var path = require("path");
@@ -23,7 +23,7 @@ app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 //favorite icon
-app.use(favicon(path.join(__dirname, 'app/public/assets/images/favicon.ico')));
+// app.use(favicon(path.join(__dirname, 'app/public/assets/images/favicon.ico')));
 
 // Set Handlebars.
 var exphbs = require("express-handlebars");

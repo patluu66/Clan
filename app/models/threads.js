@@ -1,29 +1,26 @@
 
-// This may be confusing but here Sequelize (capital) references the standard library
-var Sequelize = require("sequelize");
-// sequelize (lowercase) references our connection to the DB.
-var sequelize = require("../config/connection.js");
+module.exports = function(sequelize, DataTypes) {
+  	var Threads = sequelize.define('thread', {
+	  	title: {
+			type: DataTypes.STRING
+		},
+		body: {
+		    type: DataTypes.STRING
+		}
+	});
 
-var PostThreads = sequelize.define("threads", {
-  title: {
-    type: Sequelize.STRING
-  },
-  owner_id: {
-    type: Sequelize.INTEGER
-  },
-  body: {
-    type: Sequelize.STRING
-  },
-  created_at: {
-    type: Sequelize.DATE
-  }
-}, {
-  timestamps: false
-});
+  	Threads.associate = function(models) {
+	
+		Threads.belongsTo(models.PostPeople, {
+		  foreignKey: {
+		    allowNull: false
+		  }
+		});
+		
+	};
 
-PostThreads.sync();
-
-module.exports = PostThreads;
+  return Threads;
+};
 
 
 
@@ -34,12 +31,29 @@ module.exports = PostThreads;
 
 
 
+// // This may be confusing but here Sequelize (capital) references the standard library
+// var Sequelize = require("sequelize");
+// // sequelize (lowercase) references our connection to the DB.
+// var sequelize = require("../config/connection.js");
 
-// module.exports = function(sequelize, DataTypes) {
-//   var Threads = sequelize.define('thread', {
+// var PostThreads = sequelize.define("threads", {
+//   title: {
+//     type: Sequelize.STRING
+//   },
+//   owner_id: {
+//     type: Sequelize.INTEGER
+//   },
+//   body: {
+//     type: Sequelize.STRING
+//   },
+//   created_at: {
+//     type: Sequelize.DATE
+//   }
+// }, {
+//   timestamps: false
+// });
 
-//   }, {
-//     tablename: 'threads'
-//   });
-//   return Threads;
-// };
+// PostThreads.sync();
+
+// module.exports = PostThreads;
+
