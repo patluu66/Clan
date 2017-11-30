@@ -64,7 +64,17 @@ h1, h2, h3, h4, h5, h6 {
 	font-size: 12px;
 }
 
-/*profile page*/
+/* user page */
+
+.userTitle {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.userInfo {
+	display: inline;
+}
+
+/* profile page */
 .userChanges {
 	display: inline;
 }
