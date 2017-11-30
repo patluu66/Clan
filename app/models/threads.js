@@ -4,15 +4,13 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
 
-//create the threads table
-var Threads = sequelize.define('thread', {
 
-}, {
-  tablename: 'threads'
-});
 
-// Syncs with DB
-Threads.sync();
+module.exports = function(sequelize, DataTypes) {
+  var Threads = sequelize.define('thread', {
 
-//export the thread model
-module.exports = Threads;
+  }, {
+    tablename: 'threads'
+  });
+  return Threads;
+};

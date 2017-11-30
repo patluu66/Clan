@@ -1,2 +1,0 @@
-DROP DATABASE IF EXISTS `clan_db`;
-CREATE DATABASE `clan_db`;

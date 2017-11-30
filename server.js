@@ -43,16 +43,22 @@ app.use(express.static("app/public"));
 
 
 //setup the routes - controller
-require("./app/controllers/clan_controller.js");
+var routes = require("./app/controllers/clan_controller.js");
 
-// bring in the routes
-var routes = require('./controllers/burgers_controller.js');
+// bring in the models
+var db = require("./app/models");
 
 // connect the routes
 app.use('/', routes);
 
-
-//run up the server
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+db.sequelize.sync().then (function() {
+  //run up the server
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
 });
+
+
+// db.sequelize.sync().then(function() {
+//   app.listen(port);
+// });
