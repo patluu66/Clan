@@ -1,14 +1,14 @@
 {
   "development": {
     "username": "root",
-    "password": "sql_stc_1357",
+    "password": "",
     "database": "night_birds_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password":"sql_stc_1357",
+    "password":"",
     "database": "night_birds_db",
     "host": "127.0.0.1",
     "dialect": "mysql"

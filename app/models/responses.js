@@ -5,12 +5,43 @@ var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
 
-module.exports = function(sequelize, DataTypes) {
-//create the threads table
-var Responses = sequelize.define('response', {
-
+var PostResponses = sequelize.define("responses", {
+  threads_id: {
+    type: Sequelize.INTEGER
+  },
+  owner_id: {
+    type: Sequelize.INTEGER
+  },
+  response: {
+    type: Sequelize.STRING
+  },
+  created_at: {
+    type: Sequelize.DATE
+  }
 }, {
-  tablename: 'responses'
+  timestamps: false
 });
-  return Responses;
-};
+
+
+PostResponses.sync();
+module.exports = PostResponses;
+
+
+
+
+
+
+
+
+
+
+
+// module.exports = function(sequelize, DataTypes) {
+// //create the threads table
+// var Responses = sequelize.define('response', {
+
+// }, {
+//   tablename: 'responses'
+// });
+//   return Responses;
+// };

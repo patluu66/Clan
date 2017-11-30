@@ -6,27 +6,64 @@ var Sequelize = require("sequelize");
 // sequelize (lowercase) references our connection to the DB.
 var sequelize = require("../config/connection.js");
 
+var Pets = sequelize.define("pets", {
+  owner_id: {
+    type: Sequelize.INTEGER
+  },
+  type: {
+    type: Sequelize.STRING
+  },
+  breed: {
+    type: Sequelize.STRING
+  },
+  name: {
+    type: Sequelize.STRING
+  },
+  notes: {
+    type: Sequelize.STRING
+  },
+  created_at: {
+    type: Sequelize.DATE
+  }
+}, {
+  timestamps: false
+});
 
-module.exports = function(sequelize, DataTypes) {
-//create the threads table
-  var Pets = sequelize.define("petInfo", {
-    name: {
-      type: Sequelize.STRING
-    },
-    image: {
-      type: Sequelize.STRING
-    },
-    body: {
-      type: Sequelize.STRING
-    },
-    created_at: {
-      type: Sequelize.DATE
-    }
-  }, {
-    timestamps: false
-  });
-  return Pets;
-};
+
+Pets.sync();
+
+
+module.exports = Pets;
+
+
+
+
+
+
+
+
+
+
+// module.exports = function(sequelize, DataTypes) {
+// //create the threads table
+//   var Pets = sequelize.define("petInfo", {
+//     name: {
+//       type: Sequelize.STRING
+//     },
+//     image: {
+//       type: Sequelize.STRING
+//     },
+//     body: {
+//       type: Sequelize.STRING
+//     },
+//     created_at: {
+//       type: Sequelize.DATE
+//     }
+//   }, {
+//     timestamps: false
+//   });
+//   return Pets;
+// };
 
 
 

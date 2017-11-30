@@ -4,7 +4,7 @@ var mysql = require('mysql2');
 var connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'sql_stc_1357',
+    password: '',
     database: 'night_birds_db'
 });
 
