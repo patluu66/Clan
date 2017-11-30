@@ -55,6 +55,15 @@ h1, h2, h3, h4, h5, h6 {
 	padding-top: 100px; 
 }
 
+.panelBodyReply {
+	margin-left: 40px;
+}
+
+.reply {
+	display: inline-block;
+	font-size: 12px;
+}
+
 /*profile page*/
 .userChanges {
 	display: inline;
