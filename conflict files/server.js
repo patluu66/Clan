@@ -51,6 +51,7 @@ var db = require("./app/models");
 // connect the routes
 app.use('/', routes);
 
+
 db.sequelize.sync().then (function() {
   //run up the server
   app.listen(PORT, function() {
