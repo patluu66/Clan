@@ -1,7 +1,7 @@
 
 module.exports = function(sequelize, DataTypes) {
 
-	var PostResponses = sequelize.define("responses", {
+	var Response = sequelize.define("Response", {
 	  threads_id: {
 	    type: DataTypes.INTEGER
 	  },
@@ -13,23 +13,16 @@ module.exports = function(sequelize, DataTypes) {
 	  }
 	});
 
-	PostResponses.associate = function(models) {
+	Response.associate = function(models) {
 	// Associating Author with Posts
 	// When an Author is deleted, also delete any associated Posts
-		PostResponses.belongsTo(models.PostPeople, {
+		Response.belongsTo(models.Person, {
 		  foreignKey: {
 		    allowNull: false
 		  }
 		});
-
-		PostResponses.belongsTo(models.threads, {
-		  foreignKey: {
-		    allowNull: false
-		  }
-		});
-	};
-
-  return PostResponses;
+	}
+  return Response;
 };
 
 

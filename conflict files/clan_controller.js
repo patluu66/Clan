@@ -1,4 +1,3 @@
-
 var express = require("express");
 var router = express.Router();
 var db = require("../models");
@@ -30,6 +29,7 @@ module.exports = router;
 // var db = require("./../models");
 
 
+
 //main posts page
 // router.get("/posts", function(req,res) {
 //   db.Threads.findAll({})
@@ -47,5 +47,4 @@ module.exports = router;
 
 
 //export the router
-
 // module.exports = router;

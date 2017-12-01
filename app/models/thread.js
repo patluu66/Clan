@@ -1,6 +1,6 @@
 
 module.exports = function(sequelize, DataTypes) {
-  	var Threads = sequelize.define('thread', {
+  	var Thread = sequelize.define('Thread', {
 	  	title: {
 			type: DataTypes.STRING
 		},
@@ -9,9 +9,9 @@ module.exports = function(sequelize, DataTypes) {
 		}
 	});
 
-  	Threads.associate = function(models) {
+  	Thread.associate = function(models) {
 	
-		Threads.belongsTo(models.PostPeople, {
+		Thread.belongsTo(models.Person, {
 		  foreignKey: {
 		    allowNull: false
 		  }
@@ -19,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
 		
 	};
 
-  return Threads;
+  return Thread;
 };
 
 

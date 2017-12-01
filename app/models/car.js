@@ -1,7 +1,7 @@
 
 
 module.exports = function(sequelize, DataTypes) {
-  var PostCars = sequelize.define('cars', {
+  var Car = sequelize.define('Car', {
     owner_id: {
       type: DataTypes.INTEGER
     },
@@ -20,17 +20,17 @@ module.exports = function(sequelize, DataTypes) {
   });
 
 
-  PostCars.associate = function(models) {
+  Car.associate = function(models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
-    PostCars.belongsTo(models.PostPeople, {
+    Car.belongsTo(models.Person, {
       foreignKey: {
         allowNull: false
       }
     });
   };
 
-  return PostCars;
+  return Car;
 };
 
 

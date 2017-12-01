@@ -1,7 +1,7 @@
 
 
 module.exports = function(sequelize, DataTypes) {
-	var PostPeople = sequelize.define("people", {
+	var Person = sequelize.define("Person", {
 		first_name: {
 		type: DataTypes.STRING
 		},
@@ -37,7 +37,15 @@ module.exports = function(sequelize, DataTypes) {
 		}
 	});
 
-  return PostPeople;
+	Person.associate = function(models) {
+    // Associating Author with Posts
+    // When an Author is deleted, also delete any associated Posts
+    Person.hasMany(models.Car, {
+      onDelete: "cascade"
+    });
+
+	}
+  return Person;
 };
 
 
