@@ -43,6 +43,7 @@ module.exports = function(sequelize, DataTypes) {
     Person.hasMany(models.Car, {
       onDelete: "cascade"
     });
+		
 
 	}
   return Person;

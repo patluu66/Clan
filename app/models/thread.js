@@ -10,13 +10,17 @@ module.exports = function(sequelize, DataTypes) {
 	});
 
   	Thread.associate = function(models) {
-	
+
 		Thread.belongsTo(models.Person, {
 		  foreignKey: {
 		    allowNull: false
 		  }
 		});
-		
+    
+    Thread.hasMany(models.Response, {
+      onDelete: "cascade"
+    });
+
 	};
 
   return Thread;
@@ -56,4 +60,3 @@ module.exports = function(sequelize, DataTypes) {
 // PostThreads.sync();
 
 // module.exports = PostThreads;
-
