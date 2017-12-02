@@ -8,11 +8,14 @@ router.get("/", function(req, res) {
 });
 
 router.get("/posts", function(req, res) {
-  db.Thread.findAll({})
+  db.Thread.findAll({  include:{model: db.Response} })
+
   .then(function(dbThread) {
     var hbsObject = {
       thread: dbThread
     };
+      console.log("data dump");
+      console.log(dbThread);
     return res.render("index", hbsObject);
   });
 });
@@ -20,32 +23,3 @@ router.get("/posts", function(req, res) {
 
 
 module.exports = router;
-
-
-
-
-
-// var express = require('express');
-// var router = express.Router();
-// var db = require("./../models");
-
-
-//main posts page
-// router.get("/posts", function(req,res) {
-//   db.Threads.findAll({})
-
-//   .then(function(results) {
-//     // console.log("find all results");
-//     // console.log(results);
-//     // res.render("index", results);
-//     return res.render("index", results);
-//   });
-
-// });
-
-
-
-
-//export the router
-
-// module.exports = router;

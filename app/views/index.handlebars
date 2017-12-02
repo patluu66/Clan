@@ -1,20 +1,52 @@
 
 
+  	<!-- top fixed header -->
+    <div class="container-fluid">
+      <nav class="navbar-fixed-top">
+        <ul class="nav nav-pills navbar-right pull-right">
+        <li role="presentation" class="active"><a href="index.html">Home</a></li>
+        <li role="presentation"><a href="profile.html">Your Profile</a></li>
+        <li role="presentation"><a href="events.html">Events</a></li>
+        <li role="presentation"><a href="crime.html">Crime</a></li>
+      </ul>
+        <div class="text-center mainTitle">CLAN<small>: make your clan</small>
+        </div>
+    </nav>
+  </div>
+  <!-- main content section -->
+  <div class="container mainContent">
+    <div class="row">
+      <div class="col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+          <li role="presentation"><a href="users.html"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
+          <li role="presentation"><a href="events.html"><i class="fa fa-calendar" aria-hidden="true"></i> Events</a></li>
+            <li role="presentation"><a href="crime.html"><i class="fa fa-thumbs-down" aria-hidden="true"></i> Crime</a></li>
+        </ul>
+      </div>
 
-<h1> Tom's Test Rig</h1>
+      <div class="col-md-8">
+      <!-- message board -->
+
+  {{#each thread}}
 
 
-
-<div class="bootstrap-pretty" id="content">
-
-  <!-- handle bars test from dummy data -->
-  {{#each posts}}
-
-    <h1>{{title}}</h1>
-    <p>{{body}}</p>
-    <p>{{id}}</p>
+  					<div class="panel panel-default">
+  					  <div class="panel-heading">
+  					    <h3 class="panel-title">{{title}}</h3>
+  					  </div>
+  					  <div class="panel-body">
+  					    <p>{{body}}</p>
+  					  </div>
+  					</div>
 
 
   {{/each}}
 
-</div>
+        </div>
+				<!-- end message board -->
+				<div class="col-2">
+
+				</div>
+			</div>
+
+		</div>
