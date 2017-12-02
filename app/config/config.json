@@ -8,7 +8,11 @@
   },
   "test": {
     "username": "root",
+<<<<<<< HEAD
     "password": "",
+=======
+    "password":"",
+>>>>>>> af9834a5cb7f6c68994b2834a2cc1527f3ee1fb9
     "database": "night_birds_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
