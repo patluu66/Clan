@@ -34,7 +34,9 @@
   					<div class="panel panel-default">
   					  <div class="panel-heading">
   					    <h3 class="panel-title">{{title}}</h3>
-                <h8> Posted by {{id}} at {{createdAt}} </h8> <input type="button" id="thread{{id}}" value="Reply" data-id="{{id}}" onclick="replyToThread(event)">
+                <h8> Posted by {{id}} at {{createdAt}} </h8>
+                <input type="button" id="threadReply{{id}}" value="Reply" data-id="{{id}}" onclick="replyToThread(event)">
+                <input type="button" id="threadDelete{{id}}" value="Delete" data-id="{{id}}" data-post-type="thread" onclick="deletePosting(event)">
   					  </div>
   					  <div class="panel-body">
   					    <p>{{body}}</p>
@@ -42,8 +44,11 @@
   					</div>
 
             {{#each Responses}}
-
+              <!-- inside Responses we get all the sub-elements under Responses not Thread -->
               <p>{{response}}</p>
+                <!-- build unique id for use in jquery using thread id and response id -->
+                <input type="button" id="responseDelete{{ThreadId}}{{id}}" value="Delete" data-id="{{id}}" data-post-type="response" onclick="deletePosting(event)">
+
 
             {{/each}}
 

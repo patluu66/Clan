@@ -15,11 +15,18 @@ router.get("/posts", function(req, res) {
       thread: dbThread
     };
       console.log("data dump");
-      console.log(dbThread);
+      // console.log(dbThread);
+      console.log(dbThread[0].Responses);
     return res.render("index", hbsObject);
   });
 });
 
+
+/**
+ * TODO user section
+ * 
+ *
+ */
 router.get("/users", function(req, res) {
   db.Person.findAll({  })
 
@@ -29,11 +36,16 @@ router.get("/users", function(req, res) {
     };
       console.log("data dump");
       console.log(data);
+
     return res.render("users", dataObj);
   });
 });
 
 
+/**
+ * Post a response
+ *
+ */
 router.post("/api/response", function(req, res) {
 
   console.log("Posted to respnse");
@@ -42,12 +54,28 @@ router.post("/api/response", function(req, res) {
 
   console.log("Thread id: " + threadId + ", response: " + text);
 
-
-
+  //do sequelize here
 
 
 });//end post response
 
+
+/**
+ * Delete a Thread or response
+ *
+ */
+router.post("/api/delete/:postType?", function(req, res) {
+
+  let postType = req.params.postType;
+  console.log("Posted to respnse");
+  let postId = req.body.id;
+
+  console.log("Delete: " + postType + " with id: " + postId);
+
+  //do sequelize here
+
+
+});//end delete thread
 
 
 module.exports = router;
