@@ -33,4 +33,21 @@ router.get("/users", function(req, res) {
   });
 });
 
+
+router.post("/api/response", function(req, res) {
+
+  console.log("Posted to respnse");
+  let threadId = req.body.id;
+  let text = req.body.response;
+
+  console.log("Thread id: " + threadId + ", response: " + text);
+
+
+
+
+
+});//end post response
+
+
+
 module.exports = router;
