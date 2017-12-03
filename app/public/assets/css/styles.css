@@ -22,9 +22,23 @@ h1, h2, h3, h4, h5, h6 {
 	background-color: #ee7420;
 }
 
-.signInTitle {
-	margin-top: 200px;
-	margin-bottom: 20px;
+.parallax {
+    /* The image used */
+    background: url("http://pfbla47oxrfqoj1qhic01ij0.wpengine.netdna-cdn.com/wp-content/uploads/2013/01/people_vector_illustration_icons_web.png");
+    height: 625px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.signInContainer {
+	height: 200px;
+	margin-top: 20px;
+}
+
+.signInLogo {
+	margin-top: 20px;
 	font-size: 36px;
 	letter-spacing: 5px;
 	color: #f4f4f4;
@@ -34,15 +48,16 @@ h1, h2, h3, h4, h5, h6 {
 	margin-top: 50px;
 }
 
-.joinClan {
-}
-
 .signInBox {
 	color: white;
+	margin-left: 30px;
+}
+
+.regBtn {
+	margin-right: 40px;
 }
 
 /* modal */
-/* background */
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -102,10 +117,11 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #D7D5D5;
 }
 
+/* title logo for main header*/
 .mainTitle {
 	font-size: 36px;
 	letter-spacing: 5px;
-	margin-top: 5px;
+	margin-top: 400px;
 	color: #f4f4f4;
 }
 
