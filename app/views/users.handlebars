@@ -27,30 +27,30 @@
       <div class="col-md-8">
       <!-- message board -->
 
-  <!-- begin handlebars layout -->
-  {{#each thread}}
+  {{#each user}}
 
+					<div class="panel panel-default">
+						<div class="panel-heading">
+						<i class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
+						<p class="userInfo">{{first_name}} &nbsp;{{last_name}} </p>
+						</div>
+						<div class="panel-body">
+						<div>Member since {{createdAt}}</div>
+						</div>
 
-  					<div class="panel panel-default">
-  					  <div class="panel-heading">
-  					    <h3 class="panel-title">{{title}}</h3>
-                <h8> Posted by {{id}} at {{createdAt}} </h8>
-                <input type="button" id="threadReply{{id}}" value="Reply" data-id="{{id}}" onclick="replyToThread(event)">
-                <input type="button" id="threadDelete{{id}}" value="Delete" data-id="{{id}}" data-post-type="thread" onclick="deletePosting(event)">
-  					  </div>
-  					  <div class="panel-body">
-  					    <p>{{body}}</p>
-  					  </div>
-  					</div>
+						<ul class="list-group">
+						<li class="list-group-item">Home Phone: {{home_phone}}</li>
+						<li class="list-group-item">Work Phone: {{work_phone}}</li>
+						<li class="list-group-item">Mobile Phone: {{mobile_phone}}</li>
+            <li class="list-group-item">Email: {{email}}</li>
+						<li class="list-group-item">Cars: Prius 2001</li>
+						<li class="list-group-item">Pets: Boofy</li>
+						<li class="list-group-item">Security Cameras installed</li>
+						<li class="list-group-item">Available as a Guardian</li>
+						<li class="list-group-item">Home is listed as a "Safe Place"</li>
+						</ul>
+					</div>
 
-            {{#each Responses}}
-              <!-- inside Responses we get all the sub-elements under Responses not Thread -->
-              <p>{{response}}</p>
-                <!-- build unique id for use in jquery using thread id and response id -->
-                <input type="button" id="responseDelete{{ThreadId}}{{id}}" value="Delete" data-id="{{id}}" data-post-type="response" onclick="deletePosting(event)">
-
-
-            {{/each}}
 
 
   {{/each}}

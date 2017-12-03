@@ -131,6 +131,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mainContent {
+<<<<<<< HEAD
+	padding-top: 100px; 
+=======
 	padding-top: 100px;
 }
 
@@ -153,9 +156,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 .userInfo {
 	display: inline;
+>>>>>>> 0c499c0a99cea35f4d3c782641463903d024df1f
 }
 
 /*profile page*/
 .userChanges {
 	display: inline;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 0c499c0a99cea35f4d3c782641463903d024df1f
