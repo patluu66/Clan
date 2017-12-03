@@ -121,24 +121,28 @@ h1, h2, h3, h4, h5, h6 {
 .mainTitle {
 	font-size: 36px;
 	letter-spacing: 5px;
-	margin-top: 400px;
+	/*margin-top: 400px;*/
 	color: #f4f4f4;
 }
 
 .navbar-fixed-top {
 	background-color: #ee7420;
+	height: 60px;
 }
+
 .mainContent {
 	padding-top: 100px;
 }
 
 .panelBodyReply {
 	margin-left: 40px;
+	margin-right: 20px;
 }
 
 .reply {
 	display: inline-block;
 	font-size: 12px;
+	/*margin-right: 20px;*/
 }
 
 /* user page */
