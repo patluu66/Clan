@@ -27,12 +27,14 @@
       <div class="col-md-8">
       <!-- message board -->
 
+  <!-- begin handlebars layout -->
   {{#each thread}}
 
 
   					<div class="panel panel-default">
   					  <div class="panel-heading">
   					    <h3 class="panel-title">{{title}}</h3>
+                <h8> Posted by {{id}} at {{createdAt}} </h8> <input type="button" id="thread{{id}}" value="Reply" data-id="{{id}}" onclick="replyToThread(event)">
   					  </div>
   					  <div class="panel-body">
   					    <p>{{body}}</p>
