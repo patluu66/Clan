@@ -8,8 +8,15 @@
   },
   "test": {
     "username": "root",
+
+
+    "password": "",
+
+    "database": "night_birds_db",
+
     "password":"sql_stc_13578",
     "database": "tester",
+
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
