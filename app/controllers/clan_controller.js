@@ -3,9 +3,9 @@ var express = require("express");
 var router = express.Router();
 var db = require("../models");
 
-router.get("/", function(req, res) {
-  res.redirect("/clan");
-});
+// router.get("/", function(req, res) {
+//   res.redirect("/clan");
+// });
 
 router.get("/users", function(req, res) {
   db.Person.findAll({  })
@@ -54,9 +54,9 @@ router.get("/clan", function(req, res) {
     var hbsObject = {
       thread: dbThread
     };
-      console.log("data dump");
+      //console.log("data dump");
       // console.log(dbThread[0]);
-    return res.render("index", hbsObject);
+    return res.render("clan", hbsObject);
   });
 });
 
@@ -84,7 +84,7 @@ router.post("/clan/post", function(req, res) {
   // db.Thread.findAll({ include:[ db.Response] })
 
   if(req.body.response) {
-    
+
     db.Response.create({
       response: req.body.response,
       createAt: "NOW()",
@@ -94,7 +94,7 @@ router.post("/clan/post", function(req, res) {
     })
 
     .then(function(dbResponse) {
-      res.redirect("/");
+      res.redirect("/clan");
     });
   }
 });
@@ -123,7 +123,3 @@ router.post("/api/delete/:postType?", function(req, res) {
 
 
 module.exports = router;
-
-
-
-
