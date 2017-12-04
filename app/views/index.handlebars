@@ -1,59 +1,62 @@
 
 
-  	<!-- top fixed header -->
-    <div class="container-fluid">
-      <nav class="navbar-fixed-top">
-        <ul class="nav nav-pills navbar-right pull-right">
-        <li role="presentation" class="active"><a href="index.html">Home</a></li>
-        <li role="presentation"><a href="profile.html">Your Profile</a></li>
-        <li role="presentation"><a href="events.html">Events</a></li>
-        <li role="presentation"><a href="crime.html">Crime</a></li>
-      </ul>
-        <div class="text-center mainTitle">CLAN<small>: make your clan</small>
-        </div>
-    </nav>
-  </div>
+<!-- top fixed header -->
+<div class="container-fluid">
+  <nav class="navbar-fixed-top">
+    <ul class="nav nav-pills navbar-right pull-right">
+    <li role="presentation" class="active"><a href="index.html">Home</a></li>
+    <li role="presentation"><a href="profile.html">Your Profile</a></li>
+    <li role="presentation"><a href="events.html">Events</a></li>
+    <li role="presentation"><a href="crime.html">Crime</a></li>
+    </ul>
+      <div class="text-center mainTitle">CLAN<small>: make your clan</small>
+    </div>
+  </nav>
+</div>
   <!-- main content section -->
-  <div class="container mainContent">
-    <div class="row">
-      <div class="col-md-2">
-        <ul class="nav nav-pills nav-stacked">
-          <li role="presentation"><a href="users.html"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
-          <li role="presentation"><a href="events.html"><i class="fa fa-calendar" aria-hidden="true"></i> Events</a></li>
-            <li role="presentation"><a href="crime.html"><i class="fa fa-thumbs-down" aria-hidden="true"></i> Crime</a></li>
-        </ul>
-      </div>
+<div class="container mainContent">
+  <div class="row">
+    <div class="col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+        <li role="presentation"><a href="users.html"><i class="fa fa-users" aria-hidden="true"></i> Users</a></li>
+        <li role="presentation"><a href="events.html"><i class="fa fa-calendar" aria-hidden="true"></i> Events</a></li>
+        <li role="presentation"><a href="crime.html"><i class="fa fa-thumbs-down" aria-hidden="true"></i> Crime</a></li>
+      </ul>
+    </div>
 
-      <div class="col-md-8">
+    <div class="col-md-8">
       <!-- message board -->
 
-  <!-- begin handlebars layout -->
+  <br><br><br><br>
+
   {{#each thread}}
 
+		<div class="panel panel-default">
+		  <div class="panel-heading">
+		    <h3 class="panel-title">{{title}}</h3>
+		  </div>
+		  
+      <div class="panel-body">
+		    <p>{{body}}</p>
 
-  					<div class="panel panel-default">
-  					  <div class="panel-heading">
-  					    <h3 class="panel-title">{{title}}</h3>
-                <h8> Posted by {{id}} at {{createdAt}} </h8>
-                <input type="button" id="threadReply{{id}}" value="Reply" data-id="{{id}}" onclick="replyToThread(event)">
-                <input type="button" id="threadDelete{{id}}" value="Delete" data-id="{{id}}" data-post-type="thread" onclick="deletePosting(event)">
-  					  </div>
-  					  <div class="panel-body">
-  					    <p>{{body}}</p>
-  					  </div>
-  					</div>
+        {{#each Responses}}
 
-            {{#each Responses}}
-              <!-- inside Responses we get all the sub-elements under Responses not Thread -->
-              <p>{{response}}</p>
-                <!-- build unique id for use in jquery using thread id and response id -->
-                <input type="button" id="responseDelete{{ThreadId}}{{id}}" value="Delete" data-id="{{id}}" data-post-type="response" onclick="deletePosting(event)">
+          <p>{{response}}</p>
 
+        {{/each}}
+        
+        <form method="POST" action="/clan/post?_method=PUT" class="button-size">
+                <input input type="hidden" type="text" name="thread_id" value={{this.id}}>  
+                <input class="custInput" input type="text" name="response" size="50" placeholder="Enter message?"><br>
+                <button type="submit" class="btn btn-default">Reply!</button><br>
+        </form>
 
-            {{/each}}
-
+      </div>
+    </div>
 
   {{/each}}
+
+{{!-- </div> --}}
 
         </div>
 				<!-- end message board -->

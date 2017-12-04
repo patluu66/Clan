@@ -1,3 +1,189 @@
+use tester2;
+
+
+-- 
+-- INSERT INTO threads (title, PersonId, createdAt, updatedAt, body) 
+-- VALUES ('I have a Teacup Maltipoo Dog ', 3, NOW(), NOW(), "I need a dog walker");
+-- 
+-- INSERT INTO threads (title, PersonId, createdAt, updatedAt, body) 
+-- VALUES ('Teacup Maltipoo Dog', 4, NOW(), NOW(), "On family vaction, need someone to watch my dog for 2 weeks");
+-- 
+-- 
+
+-- INSERT INTO Responses (ThreadId, createdAt, updatedAt, response, PersonId)
+-- VALUES (3, NOW(), NOW(), "I could watch Peppy for free", 3);
+-- 
+
+-- INSERT INTO Responses (response)
+-- VALUES ("I could watch Peppy for free");
+-- 
+-- 
+select * from Responses;
+
+
+
+
+use tester2;
+
+
+-- 
+-- INSERT INTO threads (title, PersonId, createdAt, updatedAt, body) 
+-- VALUES ('I have a Teacup Maltipoo Dog ', 3, NOW(), NOW(), "I need a dog walker");
+-- 
+-- INSERT INTO threads (title, PersonId, createdAt, updatedAt, body) 
+-- VALUES ('Teacup Maltipoo Dog', 4, NOW(), NOW(), "On family vaction, need someone to watch my dog for 2 weeks");
+-- 
+-- 
+
+-- INSERT INTO Responses (ThreadId, createdAt, updatedAt, response, PersonId)
+-- VALUES (3, NOW(), NOW(), "I could watch Peppy for free", 3);
+-- 
+
+-- INSERT INTO Responses (response)
+-- VALUES ("I could watch Peppy for free");
+-- 
+-- 
+select * from Responses;
+
+
+use tester;
+
+
+INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+VALUES ('Jane', 'White', "453 Elm Street", 5034267581, 4089978252, 5031115667, 'jane_white@nowhere.net', 121217, 121217);
+
+INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+VALUES ('Fred', 'Applebaum', "17 Throny Tree", 5034267581, 4089978252, 5031115667, 'fredstheman@idontexist.org', 121217, 121217);
+
+INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+VALUES ('Jim', 'Fredrickson', "12 Throny Tree", 4084267581, 4159978252, 4081115667, 'jimmya1@wheresisat.org', 121217, 121217);
+
+INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+VALUES ('Samantha', 'Greystone', "128 Maple Lane", 4154287381, 4158729654, null, 'sammyg@wheresisat.org', 121217, 121217);
+
+INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+VALUES ('Meredith', 'McConnel', "500 Elm Street", 4083347381, null, 408993256, 'mmcconnel@idontexist.org', 121217, 121217);
+
+
+
+
+select * from people;
+
+
+
+
+CREATE DATABASE tester2;
+
+
+
+
+
+USE tester2;
+
+
+
+INSERT INTO threads (title, PersonId, createdAt, updatedAt, body) 
+VALUES ('Skunk Afoot', 1, NOW(), NOW(), "There is a skunk living in the drainage culvert - beware!");
+
+INSERT INTO threads (title, PersonId, createdAt, updatedAt, body) 
+VALUES ('Car - Lights On!', 2, NOW(), NOW(), "There is a car with it's lights on at the corner");
+
+
+
+select * from threads;
+
+
+
+
+
+
+
+
+-- use tester;
+-- 
+-- -- 
+-- -- INSERT INTO responses (threads_id, owner_id, createdAt, updatedAt, response, PersonId)
+-- -- VALUES (1, 2, NOW(), NOW(), "No problem", 3);
+-- -- 
+-- 
+-- INSERT INTO responses (threads_id, owner_id, createdAt, updatedAt, response, PersonId)
+-- VALUES (2, 4, NOW(), NOW(), "I've been smelling him for a bit now...", 4);
+-- 
+-- 
+-- select * from responses;
+
+
+
+-- INSERT INTO threads (title, PersonId, createdAt, updatedAt, body) 
+-- VALUES ('Skunk Afoot', 1, NOW(), NOW(), "There is a skunk living in the drainage culvert - beware!");
+-- 
+-- 
+-- select * from threads;
+
+
+
+
+
+
+
+
+-- INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+-- VALUES ('Jane', 'White', "453 Elm Street", 5034267581, 4089978252, 5031115667, 'jane_white@nowhere.net', 121217, 121217);
+-- 
+-- INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+-- VALUES ('Fred', 'Applebaum', "17 Throny Tree", 5034267581, 4089978252, 5031115667, 'fredstheman@idontexist.org', 121217, 121217);
+-- 
+-- INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+-- VALUES ('Jim', 'Fredrickson', "12 Throny Tree", 4084267581, 4159978252, 4081115667, 'jimmya1@wheresisat.org', 121217, 121217);
+-- 
+-- INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+-- VALUES ('Samantha', 'Greystone', "128 Maple Lane", 4154287381, 4158729654, null, 'sammyg@wheresisat.org', 121217, 121217);
+-- 
+-- INSERT INTO people (first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, createdAt, updatedAt) 
+-- VALUES ('Meredith', 'McConnel', "500 Elm Street", 4083347381, null, 408993256, 'mmcconnel@idontexist.org', 121217, 121217);
+-- 
+-- 
+-- 
+-- 
+-- select * from people;
+
+
+-- insert into Threads(title, body, createdAt)
+-- values ("hi", "hey", 121217);
+-- 
+
+-- insert into Threads(title, body, createdAt, updatedAt, PersonId)
+-- values ("hi", "hey", 121217, 121217, 1);
+-- -- 
+-- 
+-- select * from Threads;
+
+
+-- insert into People(first_name, last_name, street_address, home_phone, work_phone, mobile_phone, email, password, security, guardian, safe_place, createdAt, updatedAt)
+-- values ("hi", "hey", 121217, 121217, 1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*   Some Test Data  */
 
 USE night_birds_db;

@@ -21,6 +21,7 @@ module.exports = function(sequelize, DataTypes) {
 		    allowNull: false
 		  }
 		});
+
 		Response.belongsTo(models.Thread, {
 		  foreignKey: {
 		    allowNull: false
