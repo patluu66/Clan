@@ -7,48 +7,6 @@ router.get("/", function(req, res) {
   res.redirect("/clan");
 });
 
-router.get("/clan", function(req, res) {
-  db.Thread.findAll({ include:[ db.Response] })
-
-  .then(function(dbThread) {
-    var hbsObject = {
-      thread: dbThread
-    };
-      console.log("data dump");
-      // console.log(dbThread[0]);
-    return res.render("index", hbsObject);
-  });
-});
-
-
-router.post("/clan/post", function(req, res) {
-  // db.Thread.findAll({ include:[ db.Response] })
-
-  if(req.body.response) {
-    
-    console.log("----------------")
-    console.log(req.body);
-    console.log(req.body.burger_id);
-    
-    db.Response.create({
-      response: req.body.response,
-      createAt: "NOW()",
-      updateAt: "NOW()",
-      PersonId: 1,
-      ThreadId: req.body.thread_id
-    })
-
-    .then(function(dbResponse) {
-      res.redirect("/");
-    });
-  }
-});
-
-
-
-
-//--------------
-
 router.get("/users", function(req, res) {
   db.Person.findAll({  })
 
@@ -62,6 +20,46 @@ router.get("/users", function(req, res) {
     return res.render("users", dataObj);
   });
 });
+
+
+router.get("/users", function(req, res) {
+  db.Thread.findAll({
+  })
+  .then(function(dbThread) {
+    return res.render("users", dbThread);
+    // var hbsObject = {
+    //   burger: dbBurger
+    // };
+    // return res.render("index", hbsObject);
+  });
+});
+
+router.get("/signIn", function(req, res) {
+  db.Thread.findAll({
+  })
+  .then(function(dbThread) {
+    return res.render("signIn", dbThread);
+    // var hbsObject = {
+    //   burger: dbBurger
+    // };
+    // return res.render("index", hbsObject);
+  });
+});
+
+
+router.get("/clan", function(req, res) {
+  db.Thread.findAll({ include:[ db.Response] })
+
+  .then(function(dbThread) {
+    var hbsObject = {
+      thread: dbThread
+    };
+      console.log("data dump");
+      // console.log(dbThread[0]);
+    return res.render("index", hbsObject);
+  });
+});
+
 
 
 /**
@@ -80,6 +78,28 @@ router.post("/api/response", function(req, res) {
 
 
 });
+
+
+router.post("/clan/post", function(req, res) {
+  // db.Thread.findAll({ include:[ db.Response] })
+
+  if(req.body.response) {
+    
+    db.Response.create({
+      response: req.body.response,
+      createAt: "NOW()",
+      updateAt: "NOW()",
+      PersonId: 1,
+      ThreadId: req.body.thread_id
+    })
+
+    .then(function(dbResponse) {
+      res.redirect("/");
+    });
+  }
+});
+
+
 
 
 /**
