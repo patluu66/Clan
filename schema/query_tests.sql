@@ -10,4 +10,4 @@
 -- SELECT * FROM pets WHERE owner_id=1;
 
 /* select all the mebers of a room */
- SELECT * FROM room_members RIGHT JOIN people ON people.id=room_members.person_id WHERE room_id=2;
+ -- SELECT * FROM room_members RIGHT JOIN people ON people.id=room_members.person_id WHERE room_id=2;

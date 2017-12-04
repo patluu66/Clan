@@ -40,11 +40,10 @@ module.exports = function(sequelize, DataTypes) {
 	Person.associate = function(models) {
     // Associating Author with Posts
     // When an Author is deleted, also delete any associated Posts
-    Person.hasMany(models.Car, {
-      onDelete: "cascade"
-    });
-		
-
+	    Person.hasMany(models.Car, {
+	      onDelete: "cascade"
+	    });
+    
 	}
   return Person;
 };

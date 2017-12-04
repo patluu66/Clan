@@ -10,7 +10,7 @@ module.exports = function(sequelize, DataTypes) {
 	});
 
   	Thread.associate = function(models) {
-
+  		
 		Thread.belongsTo(models.Person, {
 		  foreignKey: {
 		    allowNull: false

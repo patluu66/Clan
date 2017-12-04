@@ -4,29 +4,51 @@ var router = express.Router();
 var db = require("../models");
 
 router.get("/", function(req, res) {
-  res.redirect("/posts");
+  res.redirect("/clan");
 });
 
-router.get("/posts", function(req, res) {
-  db.Thread.findAll({  include:[ db.Response] })
+router.get("/clan", function(req, res) {
+  db.Thread.findAll({ include:[ db.Response] })
 
   .then(function(dbThread) {
     var hbsObject = {
       thread: dbThread
     };
       console.log("data dump");
-      // console.log(dbThread);
-      console.log(dbThread[0].Responses);
+      // console.log(dbThread[0]);
     return res.render("index", hbsObject);
   });
 });
 
 
-/**
- * TODO user section
- * 
- *
- */
+router.post("/clan/post", function(req, res) {
+  // db.Thread.findAll({ include:[ db.Response] })
+
+  if(req.body.response) {
+    
+    console.log("----------------")
+    console.log(req.body);
+    console.log(req.body.burger_id);
+    
+    db.Response.create({
+      response: req.body.response,
+      createAt: "NOW()",
+      updateAt: "NOW()",
+      PersonId: 1,
+      ThreadId: req.body.thread_id
+    })
+
+    .then(function(dbResponse) {
+      res.redirect("/");
+    });
+  }
+});
+
+
+
+
+//--------------
+
 router.get("/users", function(req, res) {
   db.Person.findAll({  })
 
@@ -57,7 +79,7 @@ router.post("/api/response", function(req, res) {
   //do sequelize here
 
 
-});//end post response
+});
 
 
 /**
@@ -78,4 +100,10 @@ router.post("/api/delete/:postType?", function(req, res) {
 });//end delete thread
 
 
+
+
 module.exports = router;
+
+
+
+

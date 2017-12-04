@@ -1,4 +1,7 @@
-
+/** {
+	border: solid 1px black;
+}
+*/
 body {
 	margin: 0 auto;
 }
@@ -17,85 +20,6 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Palanquin', sans-serif;
 }
 
-/* sign in page */
-.bg {
-	background-color: #ee7420;
-}
-
-.parallax {
-    /* The image used */
-    background: url("http://pfbla47oxrfqoj1qhic01ij0.wpengine.netdna-cdn.com/wp-content/uploads/2013/01/people_vector_illustration_icons_web.png");
-    height: 625px;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-.signInContainer {
-	height: 200px;
-	margin-top: 20px;
-}
-
-.signInLogo {
-	margin-top: 20px;
-	font-size: 36px;
-	letter-spacing: 5px;
-	color: #f4f4f4;
-}
-
-.buttons {
-	margin-top: 50px;
-}
-
-.signInBox {
-	color: white;
-	margin-left: 30px;
-}
-
-.regBtn {
-	margin-right: 40px;
-}
-
-/* modal */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-}
-
-/* Modal Content/Box */
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-/* main styles */
 .nav {
 	margin-top: 10px;
 	margin-right: 20px;
@@ -117,19 +41,16 @@ h1, h2, h3, h4, h5, h6 {
   background-color: #D7D5D5;
 }
 
-/* title logo for main header*/
 .mainTitle {
 	font-size: 36px;
 	letter-spacing: 5px;
-	/*margin-top: 400px;*/
+	margin-top: 5px;
 	color: #f4f4f4;
 }
 
 .navbar-fixed-top {
 	background-color: #ee7420;
-	height: 60px;
 }
-
 .mainContent {
 <<<<<<< HEAD
 	padding-top: 100px; 
@@ -139,13 +60,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .panelBodyReply {
 	margin-left: 40px;
-	margin-right: 20px;
 }
 
 .reply {
 	display: inline-block;
 	font-size: 12px;
-	/*margin-right: 20px;*/
 }
 
 /* user page */
