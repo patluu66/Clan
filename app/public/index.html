@@ -8,6 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Clan</title>
         <link rel="shortcut icon" href="assets/images/favicon.ico">
+    <!-- jquery -->
+    <script
+			  src="https://code.jquery.com/jquery-3.2.1.min.js"
+			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+			  crossorigin="anonymous"></script>
         <!-- Bootstrap -->
         <!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -16,11 +21,12 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- CSS -->
-        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="./assets/css/styles.css">
         <!-- Font Awesome -->
         <script src="https://use.fontawesome.com/f9df423f4a.js"></script>
 		<!--Parallax  -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+
     </head>
     <body class="bg">
     	<div class="parallax"></div>
@@ -35,15 +41,15 @@
 			<div class="row signInContainer">
 	   			<div class="col-md-3 col-md-offset-3">
 	   				<button id="registerBtn" type="button" class="btn btn-default btn-xs pull-right regBtn">Register</button>
-	   				<p class="signInBox">Join your clan</p>	
+	   				<p class="signInBox">Join your clan</p>
 				</div>
 
 				<div class="col-md-3 text-center">
 					<button id="signInBtn" type="button" class="btn btn-default btn-xs pull-right">Sign in</button>
 					<p class="signInBox">Already a member?</p>
 				</div>
-			</div>			
-						
+			</div>
+
 			<!-- beginning of register modal -->
 			<div id="registerModal" class="modal">
 				<!-- modal content -->
@@ -73,7 +79,7 @@
 					    <label for="car">Enter the year of your car</label>
 					    <input type="text" class="form-control" id="car" placeholder="Year of car">
 					  </div>
-					
+
 					  <div class="form-group">
 						<label for="petType">What type of pet do you have?</label>
 						<select class="form-control">
@@ -108,7 +114,7 @@
 					</form>
 				</div>
 			</div>
-							
+
 			<!-- beginning of sign in modal -->
 			<div id="signInModal" class="modal">
 				<!-- modal content -->
@@ -124,17 +130,17 @@
 					    <label for="password">Enter your password</label>
 					    <input type="password" class="form-control" id="password" placeholder="Password">
 					  </div>
-				
+
 					  <button type="submit" class="btn btn-default">
-					  	<a href="index.html">Submit</a>
+					  	<a href="clan/">Submit</a>
 					  </button>
 					</form>
 
 				</div>
-			</div>	
-		</div> 
+			</div>
+		</div>
 		<!-- end main container -->
-		<script type="text/javascript">		
+		<script type="text/javascript">
 			var modal = document.getElementById('registerModal');
 			var modalLogin = document.getElementById('signInModal');
 			// Get the button that opens the modal
@@ -144,7 +150,7 @@
 			// Get the <span> element that closes the modal
 			var span = document.getElementsByClassName("close")[0];
 			var span1 = document.getElementsByClassName("close")[1];
-			// When the user clicks on the button, open the modal 
+			// When the user clicks on the button, open the modal
 			btn.onclick = function() {
 			modal.style.display = "block";
 			}
@@ -169,6 +175,6 @@
 				modalLogin.style.display = "none";
 			}
 			}
-		</script>   
-    </body>    
+		</script>
+    </body>
 </html>
